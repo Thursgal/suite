@@ -157,7 +157,8 @@ class StageConfig(DefaultConfig):
 class DevelopmentConfig(DefaultConfig):
     ENV = "dev"
     DEBUG = True
-    URL = os.environ.get("URL", "http://suite.local")
+    #URL = os.environ.get("URL", "http://suite.local")
+    URL = "http://localhost:8080"
     ROBOTS_TEMPLATE = "text/robots-private.txt"
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI", "mysql://root:bacon@localhost/dev")
     SECRET_KEY = "It is a secret - and if I told you it would not be a secret"
