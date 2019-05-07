@@ -8,6 +8,7 @@ from flask.ext.bootstrap import Bootstrap
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 from flask.ext.redis import Redis
+from flask_wtf import CsrfProtect
 from celery import Celery
 import phonenumbers
 
@@ -69,6 +70,7 @@ def create_celery_app(app=None):
 def create_app(config_name, register_blueprints=True):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
+    app.config['WTF_CSRF_METHODS'] = []
     config[config_name].init_app(app)
     bootstrap.init_app(app)
     db.init_app(app)

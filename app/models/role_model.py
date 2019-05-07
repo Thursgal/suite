@@ -5,7 +5,7 @@ from app import db
 class Role(db.Model):
     __tablename__ = "roles"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(256))
+    name = db.Column(db.String(200))
     location_id = db.Column(db.Integer, ForeignKey('locations.id'))
     members = db.relationship("RoleToUser", backref=db.backref("role"))
     archived = db.Column(

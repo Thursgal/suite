@@ -15,7 +15,7 @@ class ApiKey(db.Model):
     __tablename__ = "apikeys"
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, ForeignKey('users.id'))
-    name = db.Column(db.String(256))  # User-defined
+    name = db.Column(db.String(200))  # User-defined
     key_hash = db.Column(db.String(128))
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     last_used = db.Column(db.DateTime(), default=datetime.utcnow)

@@ -12,7 +12,7 @@ class RoleToUser(db.Model):
         db.Integer, default=40, server_default="40", nullable=False)
     max_half_hours_per_workweek = db.Column(
         db.Integer, default=80, server_default="80", nullable=False)
-    internal_id = db.Column(db.String(256), index=True, nullable=True)
+    internal_id = db.Column(db.String(200), index=True, nullable=True)
     working_hours = db.Column(db.LargeBinary)
     archived = db.Column(
         db.Boolean, default=False, server_default="0", nullable=False)

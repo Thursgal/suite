@@ -11,9 +11,9 @@ services:
     command: supervisord -n
     environment:
       ENV: 'dev'
-      URL: 'http://localhost'
-      SERVER_NAME: 'localhost'
-      SQLALCHEMY_DATABASE_URI: "mysql://root:bacon@mysqlserver/dev"
+      URL: 'http://ubuntu.oreillyauto.com'
+      SERVER_NAME: 'ubuntu.oreillyauto.com'
+      SQLALCHEMY_DATABASE_URI: "mysql://root:bacon@suite_db_1/dev"
       REDIS_HOST: redis
     volumes:
       - '.:/src'
@@ -25,7 +25,7 @@ services:
     hostname: suite
   db:
     hostname: mysqlserver
-    image: orchardup/mysql
+    image: mysql:5.7
     environment:
         MYSQL_ROOT_PASSWORD: bacon
         MYSQL_DATABASE: dev

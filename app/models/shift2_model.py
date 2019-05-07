@@ -17,7 +17,7 @@ from app.models.role_to_user_model import RoleToUser
 class Shift2(db.Model):
     """introduced for apiv2"""
 
-    MAX_DESCRIPTION_LENGTH = 256
+    MAX_DESCRIPTION_LENGTH = 200
 
     __tablename__ = "shifts2"
     id = db.Column(db.Integer, primary_key=True)
@@ -31,7 +31,7 @@ class Shift2(db.Model):
         db.Boolean, default=False, server_default="0", nullable=False)
     created_at = db.Column(db.DateTime(), default=datetime.utcnow)
     last_update = db.Column(db.DateTime(), onupdate=datetime.utcnow)
-    description = db.Column(db.String(256))
+    description = db.Column(db.String(200))
 
     def get_schedule(self):
         """returns the schedule model that the shift takes place during"""

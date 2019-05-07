@@ -26,7 +26,7 @@ class RecurringShift(db.Model):
     role_id = db.Column(db.Integer, ForeignKey("roles.id"), nullable=False)
     user_id = db.Column(db.Integer, ForeignKey("users.id"))
     start_day = db.Column(
-        db.String(256),
+        db.String(200),
         db.Enum("monday", "tuesday", "wednesday", "thursday", "friday",
                 "saturday", "sunday"),
         default="monday",

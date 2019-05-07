@@ -24,7 +24,7 @@ class TimeOffRequest(db.Model):
     approver_user_id = db.Column("user_id", db.Integer,
                                  db.ForeignKey("users.id"))
     state = db.Column(
-        db.String(256),
+        db.String(200),
         db.Enum(
             "approved_paid",
             "approved_unpaid",

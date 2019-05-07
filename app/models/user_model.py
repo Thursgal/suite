@@ -32,11 +32,11 @@ from app.models.role_to_user_model import RoleToUser
 class User(UserMixin, db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(256), unique=True, index=True)
+    email = db.Column(db.String(200), unique=True, index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     confirmed = db.Column(db.Boolean, default="0")
     sudo = db.Column(db.Boolean, default=False, server_default="0")
-    name = db.Column(db.String(256))
+    name = db.Column(db.String(200))
     password_hash = db.Column(db.String(128))
     member_since = db.Column(db.DateTime(), default=datetime.utcnow)
     # The "ping" function updates this

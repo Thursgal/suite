@@ -158,7 +158,7 @@ class DevelopmentConfig(DefaultConfig):
     ENV = "dev"
     DEBUG = True
     #URL = os.environ.get("URL", "http://suite.local")
-    URL = "http://localhost:8080"
+    URL = "http://ubuntu.oreillyauto.com"
     ROBOTS_TEMPLATE = "text/robots-private.txt"
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI", "mysql://root:bacon@localhost/dev")
     SECRET_KEY = "It is a secret - and if I told you it would not be a secret"
@@ -181,8 +181,8 @@ class DevelopmentConfig(DefaultConfig):
     ASSETS_DEBUG = True
 
     # For dev env cron
-    DEV_CRON_EMAIL = "sudo@staffjoy.com"
-    DEV_CRON_API_KEY = "staffjoydev"
+    DEV_CRON_EMAIL = "it_infra_developer_team@oreillyauto.com"
+    DEV_CRON_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwia2V5IjoiMWE5M2I5NDA3YmNlZTdhMzcyYTM3MjllOTNiMWNjMmVjNDAzYWU1OCJ9.ok4ywOQWthC4CnEixI2LkFlwmatsJIWaBUFp113XQxc"
 
     # Twilio!
     TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")

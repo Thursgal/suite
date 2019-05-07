@@ -22,7 +22,7 @@ organization_admins = db.Table(
 class Organization(db.Model):
     __tablename__ = "organizations"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(256))
+    name = db.Column(db.String(200))
     active = db.Column(
         db.Boolean, default=False, server_default="0", nullable=False)
     created_at = db.Column(
@@ -34,7 +34,7 @@ class Organization(db.Model):
     enable_time_off_requests_default = db.Column(
         db.Boolean, default=False, server_default="0", nullable=False)
     day_week_starts = db.Column(
-        db.String(256),
+        db.String(200),
         db.Enum("monday", "tuesday", "wednesday", "thursday", "friday",
                 "saturday", "sunday"),
         default="monday",
@@ -61,16 +61,16 @@ class Organization(db.Model):
     billing_user_id = db.Column(
         "billing_user_id", db.Integer, db.ForeignKey("users.id"), index=True)
     # Stripe unique subscription id (for that user)
-    stripe_customer_id = db.Column(db.String(256))
+    stripe_customer_id = db.Column(db.String(200))
 
     # The id of the plan, both here in the app and on stripe
     plan = db.Column(
-        db.String(256),
+        db.String(200),
         default="boss-v2",
         server_default="per-seat-v1",
         nullable=False)
 
-    paid_labs_subscription_id = db.Column(db.String(256), nullable=True)
+    paid_labs_subscription_id = db.Column(db.String(200), nullable=True)
 
     # Can extend trial for certain people
     trial_days = db.Column(

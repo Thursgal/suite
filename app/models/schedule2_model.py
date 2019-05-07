@@ -49,7 +49,7 @@ class Schedule2(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     role_id = db.Column(db.Integer, ForeignKey("roles.id"), nullable=False)
     state = db.Column(
-        db.String(256),
+        db.String(200),
         db.Enum("initial", "unpublished", "chomp-queue", "chomp-processing",
                 "mobius-queue", "mobius-processing", "published"),
         index=True,
